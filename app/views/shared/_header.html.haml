@@ -1,0 +1,40 @@
+.header
+
+  .top
+    .top__logo
+      = image_tag '/images/logo.png', height: '100px', width: '100px', class: 'top__logo__img'
+      .top__logo__title ビジネスマッチングサイト
+
+  %ul.navi
+    %li.navi__list
+      = fa_icon 'search', class: 'icon', type:'submit', fa_icon: 'search'
+      %a.navi__list__name 
+        検索
+    
+    %li.navi__list
+      %a.navi__list__name セミナー情報
+
+    %li.navi__list
+      %a.navi__list__name 新規登録
+
+    %li.navi__list
+      %a.navi__list__name ログイン
+        
+    -# - if user_signed_in?
+    -#   .user-signed
+    -#     = link_to "/", class: "" do
+    -#       = image_tag '', height: '', width: '', class: ''
+    -#       %span.user-signed__text 
+    -#         会員情報
+    -#     = link_to "/" do
+    -#       .fa.user-signed__i.fa-bell-o
+    -#       %span.user-signed__text ログアウト
+        
+    -# - else
+    -#   = link_to "/"  ,class: 'signupbtn' do
+    -#     .top__list__list__signup 
+    -#       新規登録
+    -#   &nbsp;&nbsp;
+    -#   = link_to new_user_session_path, class: "signupbtn" do
+    -#     .top__list__list__login 
+    -#       ログイン

@@ -1,0 +1,45 @@
+.header{
+  position: relative;
+  width: 960px;
+  height: 150px;
+  margin: 0 auto;
+  .top{
+    width: 960px;
+    height: 100px;
+    &__logo{
+      padding-left: 40px;
+      float: left;
+      &__title{
+        font-size: 60px;
+        float: right;
+        padding-top: 20px;
+        color: rgb(11, 59, 122)
+      }
+    }
+  }
+  .navi{
+    position: absolute;
+    top: 100px;
+    height: 50px;
+    width: 960px;
+    &__list{
+      height: 50px;
+      width: calc(100% / 4) ;
+      float: left;
+      line-height: 50px;
+      background-color: rgb(241, 241, 241);
+      text-align:center;
+      text-decoration: none;
+      border-bottom: 3px solid rgb(9, 9, 177);
+      &__name{
+        font-size: 14px;
+        color: #202020;
+        font-weight: bold;
+      }
+    }
+    &__list:hover{
+      opacity: 0.7 ;
+      border-bottom: 3px solid rgb(175, 120, 48);
+    }
+  }
+}
