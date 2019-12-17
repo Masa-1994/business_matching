@@ -8,24 +8,24 @@
   %ul.navi
     %li.navi__list
       = fa_icon 'search', class: 'icon', type:'submit', fa_icon: 'search'
-      %a.navi__list__name 
-        検索
+      %a.navi__list__name 検索
     
     %li.navi__list
-      %a.navi__list__name セミナー情報
+      = link_to "" do
+        .navi__list__name セミナー情報
     -unless user_signed_in?
       %li.navi__list
-        = link_to "/users/sign_up" do
+        = link_to signup_path do
           .navi__list__name 新規登録
 
       %li.navi__list
-        = link_to "/users/sign_in" do
+        = link_to login_path do
           .navi__list__name ログイン
     -else
       %li.navi__list
-        = link_to "/users/sign_in" do
+        = link_to "" do
           .navi__list__name 投稿
 
       %li.navi__list
-        = link_to "/users/sign_in" do
+        = link_to logout_path do
           .navi__list__name ログアウト

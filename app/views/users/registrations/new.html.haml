@@ -2,6 +2,10 @@
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = render "devise/shared/error_messages", resource: resource
   .field
+    = f.label :name
+    %br/
+    = f.text_field :name, autofocus: true
+  .field
     = f.label :email
     %br/
     = f.email_field :email, autofocus: true, autocomplete: "email"
@@ -16,6 +20,34 @@
     = f.label :password_confirmation
     %br/
     = f.password_field :password_confirmation, autocomplete: "new-password"
+  .field
+    = f.label :indutry_type
+    %br/
+    = f.text_field :indutry_type, autofocus: true
+  .field
+    = f.label :foundation_date
+    %br/
+    = f.text_field :foundation_date, autofocus: true
+  .field
+    = f.label :capital
+    %br/
+    = f.text_field :capital, autofocus: true
+  .field
+    = f.label :employee_number
+    %br/
+    = f.text_field :employee_number, autofocus: true
+  .field
+    = f.label :prefectures_id
+    %br/
+    = f.text_field :prefectures_id, autofocus: true
+  .field
+    = f.label :address
+    %br/
+    = f.text_field :address, autofocus: true
+  .field
+    = f.label :phone_number
+    %br/
+    = f.text_field :phone_number, autofocus: true
   .actions
     = f.submit "Sign up"
 = render "users/shared/links"
