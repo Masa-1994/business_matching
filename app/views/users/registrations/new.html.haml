@@ -1,53 +1,53 @@
-%h2 Sign up
+%h2 新規登録
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = render "devise/shared/error_messages", resource: resource
   .field
-    = f.label :name
+    = f.label :会社名
     %br/
     = f.text_field :name, autofocus: true
   .field
-    = f.label :email
+    = f.label :Eメール
     %br/
     = f.email_field :email, autofocus: true, autocomplete: "email"
   .field
-    = f.label :password
+    = f.label :パスワード
     - if @minimum_password_length
       %em
-        (#{@minimum_password_length} characters minimum)
+        (#{@minimum_password_length}文字まで)
     %br/
     = f.password_field :password, autocomplete: "new-password"
   .field
-    = f.label :password_confirmation
+    = f.label :パスワード再確認
     %br/
     = f.password_field :password_confirmation, autocomplete: "new-password"
   .field
-    = f.label :indutry_type
+    = f.label :業種
     %br/
     = f.text_field :indutry_type, autofocus: true
   .field
-    = f.label :foundation_date
+    = f.label :設立年月日
     %br/
     = f.text_field :foundation_date, autofocus: true
   .field
-    = f.label :capital
+    = f.label :資本金
     %br/
     = f.text_field :capital, autofocus: true
   .field
-    = f.label :employee_number
+    = f.label :従業員数
     %br/
     = f.text_field :employee_number, autofocus: true
   .field
-    = f.label :prefectures_id
+    = f.label :都道府県
     %br/
     = f.text_field :prefectures_id, autofocus: true
   .field
-    = f.label :address
+    = f.label :住所
     %br/
     = f.text_field :address, autofocus: true
   .field
-    = f.label :phone_number
+    = f.label :電話番号
     %br/
     = f.text_field :phone_number, autofocus: true
   .actions
-    = f.submit "Sign up"
+    = f.submit "新規登録"
 = render "users/shared/links"
