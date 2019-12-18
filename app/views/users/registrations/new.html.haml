@@ -13,7 +13,7 @@
     = f.label :パスワード
     - if @minimum_password_length
       %em
-        (#{@minimum_password_length}文字まで)
+        (#{@minimum_password_length}文字以上)
     %br/
     = f.password_field :password, autocomplete: "new-password"
   .field
