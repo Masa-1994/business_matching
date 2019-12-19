@@ -4,7 +4,7 @@
   .field
     = f.label :会社名
     %br/
-    = f.text_field :name, autofocus: true
+    = f.text_field :name, autofocus: true, placeholder: '例) 株式会社◯◯'
   .field
     = f.label :Eメール
     %br/
@@ -23,31 +23,33 @@
   .field
     = f.label :業種
     %br/
-    = f.text_field :indutry_type, autofocus: true
+    = f.select :indutry_type, [ ["農林漁業",1], ["鉱業", 2] , ["建設業", 3], ["製造業", 4], ["電気・ガス・熱供給・水道業", 5], ["情報通信業", 6], ["運輸業・郵便業", 7], ["卸売業・小売業", 8], ["金融業・保険業", 9], ["宿泊業・飲食サービス業", 10], ["生活関連サービス業・娯楽業", 11], ["教育・学習支援業", 12], ["医療・福祉業", 13], ["複合サービス事業	", 14], ["サービス業", 15], ["公務", 16]], prompt: "業種を選択してください"
   .field
     = f.label :設立年月日
     %br/
-    = f.text_field :foundation_date, autofocus: true
+    != sprintf(f.date_select(:foundation_date, with_css_classes:'h-select-default', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
   .field
     = f.label :資本金
     %br/
     = f.text_field :capital, autofocus: true
+    万円
   .field
     = f.label :従業員数
     %br/
     = f.text_field :employee_number, autofocus: true
+    名
   .field
     = f.label :都道府県
     %br/
-    = f.text_field :prefectures_id, autofocus: true
+    = f.collection_select :prefectures_id, Prefecture.all, :id, :name
   .field
     = f.label :住所
     %br/
-    = f.text_field :address, autofocus: true
+    = f.text_field :address, autofocus: true, placeholder: '例）〇〇市〇〇町1-1-1'
   .field
     = f.label :電話番号
     %br/
-    = f.text_field :phone_number, autofocus: true
+    = f.text_field :phone_number, autofocus: true, placeholder: 'ハイフン不要'
   .actions
     = f.submit "新規登録"
 = render "users/shared/links"
