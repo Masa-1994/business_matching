@@ -1,0 +1,32 @@
+.contents{
+  position: relative;
+  width: 960px;
+  height: 1500px;
+  margin: 0 auto;
+  .box{
+    height: 300px; 
+    &__title{
+      height: 40px;
+      background-color: lightblue;
+      font-size: 20px;
+      line-height: 40px;
+    }
+    &__main{
+      &__image{
+        float: left;
+      }
+      &__form{
+        &__name{
+          float: left;
+          padding-left: 15px;
+          padding-right: 30px;
+          font-weight: bold;
+        }
+        &__text{
+          padding-left: 15px;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
