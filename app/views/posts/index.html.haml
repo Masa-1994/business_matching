@@ -6,7 +6,7 @@
         %span.title= post.title
         .box__main
           .box__main__image
-            %img{:src => post.image, :width => "200px", :height => "200px"}
+            %img{src: post.image, width: "200px", height: "200px"}
 
           .box__main__form
             .box__main__form__name 希望取引 : 
@@ -19,3 +19,5 @@
           .box__main__form
             .box__main__form__text
               = simple_format(post.text)
+  .page
+    = paginate(@posts)
