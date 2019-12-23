@@ -2,12 +2,13 @@
 .contents
   - @posts.each do |post|
     .box
+      = link_to '詳細', "/posts/#{post.id}", method: :get
       .box__title
         %span.title= post.title
+        
         .box__main
           .box__main__image
             %img{src: post.image, width: "200px", height: "200px"}
-
           .box__main__form
             .box__main__form__name 希望取引 : 
             = simple_format(post.business)
