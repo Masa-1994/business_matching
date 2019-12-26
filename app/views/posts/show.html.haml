@@ -1,1 +1,60 @@
-あ
+.body
+  .content
+    .show
+      .show__title
+        = @post.title
+        
+      .show__main
+        .show__main__form 希望取引 : 
+        .show__main__name 
+          = @post.business
+
+      .show__main
+        .show__main__form 希望地域 : 
+        .show__main__name 
+          = @post.area
+
+      .show__text
+        .show__text__name
+          = @post.text
+
+
+      .show__company
+        会社情報
+        
+      .show__sub
+        .show__sub__form 会社名 : 
+        .show__sub__name 
+          = @user.name
+        
+      .show__sub
+        .show__sub__form 業種 : 
+        .show__sub__name 
+          = @user.indutry_type
+      
+      .show__sub
+        .show__main__form 設立年月日 : 
+        .show__main__name 
+          = @user.foundation_date
+
+      .show__sub
+        .show__sub__form 資本金 : 
+        .show__sub__name 
+          = @user.capital
+          万円
+
+      .show__sub
+        .show__sub__form 従業員数 : 
+        .show__sub__name 
+          = @user.employee_number
+          名
+
+      .show__sub
+        .show__sub__form 住所 : 
+        .show__sub__name 
+          = @user.address
+      
+      .show__btn
+        = link_to "/" do
+          .show__btn__name
+            戻る
